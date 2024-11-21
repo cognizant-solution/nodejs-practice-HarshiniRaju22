@@ -1,0 +1,50 @@
+1) Create a NodeJS application with a basic function to route to two different pages one as the Home page and next About page
+const express = require('express');
+const app = express();
+const port = 3000;
+ 
+app.get('/', (req, res) => {
+  res.send('Home Page');
+});
+ 
+app.get('/about', (req, res) => {
+  res.send('About Page');
+});
+ 
+app.listen(port, () => {
+  console.log(`Server running at http://localhost:${port}`);
+});
+has context menu
+2) Create a component called App that displays the number of times the user has hovered a button with the text “Hover Me”. The count should be displayed in an h1 element and updated each time the user hovers over the button. The initial value of the count should be set to 0.
+
+3) Create a component called Calc that can find the difference between the given two integer values.
+const prompt = require('prompt-sync')();
+ 
+function calc(a,b){
+        return a-b;
+}
+ 
+const value1=prompt("Enter the value of a: ")
+const value2=prompt("Enter the value of b: ")
+ 
+const result = calc(value1,value2);
+ 
+console.log(`The difference is: ${result}`)
+has context menu
+4) Create an application that holds three radio buttons with labels as SQL, Python and NodeJS group them to form into a group called as Technologies.
+Allow the user to select any one of the radio button and display the selected technology.
+
+5) Create an application to display the host OS name and the uptime.
+const os = require('os');
+ 
+const osName = os.type();
+ 
+ 
+const uptimeSeconds = os.uptime();
+ 
+console.log()
+ 
+ 
+const uptimeHours = Math.floor(uptimeSeconds / 3600);
+const uptimeMinutes = Math.floor((uptimeSeconds % 3600) / 60);
+const uptimeSecondsFormatted = Math.floor(uptimeSeconds % 60);
