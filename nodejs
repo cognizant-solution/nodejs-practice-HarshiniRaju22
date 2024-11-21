@@ -16,7 +16,31 @@ app.listen(port, () => {
 });
 has context menu
 2) Create a component called App that displays the number of times the user has hovered a button with the text “Hover Me”. The count should be displayed in an h1 element and updated each time the user hovers over the button. The initial value of the count should be set to 0.
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Technology</title>
+</head>
+<body>
+ 
+    <h2>Select Your Technology</h2>
+ 
+    <div>
+<label><input type="radio" name="technology" value="SQL" onclick="displaySelection()"> SQL</label>
+<label><input type="radio" name="technology" value="Python" onclick="displaySelection()"> Python</label>
+<label><input type="radio" name="technology" value="NodeJS" onclick="displaySelection()"> NodeJS</label>
+</div>
+ 
+    <div id="selected-technology">
+<p>Please select a technology.</p>
+</div>
+ 
+    <script src=script.js></script>
+ 
+</body>
+</html>
 3) Create a component called Calc that can find the difference between the given two integer values.
 const prompt = require('prompt-sync')();
  
@@ -33,7 +57,54 @@ console.log(`The difference is: ${result}`)
 has context menu
 4) Create an application that holds three radio buttons with labels as SQL, Python and NodeJS group them to form into a group called as Technologies.
 Allow the user to select any one of the radio button and display the selected technology.
+function displaySelection() {
 
+    const selectedTech = document.querySelector('input[name="technology"]:checked');
+
+    const selectedTechDiv = document.getElementById('selected-technology');
+
+    if (selectedTech) {
+
+        selectedTechDiv.innerHTML = `<p>You selected: <strong>${selectedTech.value}</strong></p>`;
+
+    }
+
+}
+
+script.js
+
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hover Counter</title>
+</head>
+<body>
+<h1 id="hoverCount">0</h1>
+<button id="hoverButton">Hover Me</button>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
+ 
+let hoverCount = 0;
+
+const hoverButton = document.getElementById('hoverButton');
+
+const hoverCountDisplay = document.getElementById('hoverCount');
+
+// Increment the hover count every time the button is hovered over
+
+hoverButton.addEventListener('mouseover', () => {
+
+  hoverCount++;
+
+  hoverCountDisplay.textContent = hoverCount;
+
+});
+ 
 5) Create an application to display the host OS name and the uptime.
 const os = require('os');
  
